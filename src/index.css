@@ -2,41 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* MoodTune Design System - Modern, aesthetic mood-based music app */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Background gradients */
+    --background: 209 100% 95%;
+    --background-secondary: 45 100% 85%;
+    --foreground: 0 0% 20%;
 
+    /* Card and surface colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary colors - sky blue accent */
+    --primary: 195 100% 75%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary colors - coral pink */
+    --secondary: 353 100% 70%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted colors */
+    --muted: 209 50% 90%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - lavender */
+    --accent: 285 50% 80%;
+    --accent-foreground: 0 0% 20%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Border and input colors */
+    --border: 209 30% 85%;
+    --input: 209 30% 85%;
+    --ring: 195 100% 75%;
 
-    --radius: 0.5rem;
+    /* Success color for happy mood */
+    --success: 120 60% 70%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning color for energetic mood */
+    --warning: 45 100% 65%;
+    --warning-foreground: 0 0% 20%;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(45 100% 85%), hsl(45 100% 75%));
+    --gradient-cool: linear-gradient(135deg, hsl(209 100% 95%), hsl(150 50% 85%));
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 75%), hsl(285 50% 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(209 100% 95%), hsl(195 100% 85%));
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(195 100% 75% / 0.25);
+    --shadow-glow: 0 0 30px hsl(195 100% 75% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.1);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +86,47 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 224 71% 4%;
+    --background-secondary: 224 71% 8%;
+    --foreground: 213 31% 91%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 224 71% 8%;
+    --card-foreground: 213 31% 91%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 224 71% 8%;
+    --popover-foreground: 213 31% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 195 100% 75%;
+    --primary-foreground: 224 71% 4%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 353 100% 70%;
+    --secondary-foreground: 224 71% 4%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 285 50% 70%;
+    --accent-foreground: 213 31% 91%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 213 31% 91%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 223 47% 11%;
+    --input: 223 47% 11%;
+    --ring: 195 100% 75%;
+
+    --success: 120 60% 50%;
+    --warning: 45 100% 55%;
+
+    --gradient-warm: linear-gradient(135deg, hsl(45 100% 25%), hsl(45 100% 35%));
+    --gradient-cool: linear-gradient(135deg, hsl(224 71% 8%), hsl(150 50% 25%));
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 75%), hsl(285 50% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(224 71% 4%), hsl(195 100% 15%));
+
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 30px hsl(195 100% 75% / 0.2);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.3);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +144,62 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-['Poppins',sans-serif] antialiased;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+
+  /* Custom utility classes */
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .gradient-cool {
+    background: var(--gradient-cool);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Emotion-specific styles */
+  .emotion-happy {
+    @apply bg-success text-success-foreground;
+  }
+
+  .emotion-sad {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .emotion-angry {
+    @apply bg-secondary text-secondary-foreground;
+  }
+
+  .emotion-surprised {
+    @apply bg-warning text-warning-foreground;
+  }
+
+  .emotion-neutral {
+    @apply bg-accent text-accent-foreground;
   }
 }
